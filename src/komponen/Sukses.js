@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import useFetch from './useFetch'
 
@@ -33,7 +33,7 @@ const Sukses = () => {
                     <img src="assets/images/sukses.png" width="500" />
                     <h2>Sukses</h2>
                     <p>Terima Kasih Telah Berbelanja</p>
-                    <button onClick={handleClick}>Back to home</button>
+                    <button className="btn btn-primary" onClick={handleClick}>Back to home</button>
                     </div>
                 }
         </div>

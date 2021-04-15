@@ -7,6 +7,7 @@ import Trainings from '../komponen/Trainings'
 import Jerseys from '../komponen/Jerseys'
 import Hasil from '../komponen/Hasil'
 import Sukses from '../komponen/Sukses'
+import FormData from '../komponen/FormData'
 
 const Router = () => {
     return (
@@ -39,6 +40,11 @@ const Router = () => {
             <Route path='/sukses'>
                 <Navbar>
                     <Sukses />
+                </Navbar>
+            </Route>
+            <Route path='/formdata'>
+                <Navbar>
+                    <FormData />
                 </Navbar>
             </Route>
         </Switch>
