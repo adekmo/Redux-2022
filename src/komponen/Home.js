@@ -1,7 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useParams } from 'react-router'
-import Hasil from './Hasil'
+import React from 'react'
 import ItemsList from './ItemsList'
 import useFetch from './useFetch'
 
@@ -44,8 +42,6 @@ const Home = () => {
                 })
             }
         })
-
-
     }
 
     return (

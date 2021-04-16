@@ -8,6 +8,7 @@ import Jerseys from '../komponen/Jerseys'
 import Hasil from '../komponen/Hasil'
 import Sukses from '../komponen/Sukses'
 import FormData from '../komponen/FormData'
+import Pembayaran from '../komponen/Pembayaran'
 
 const Router = () => {
     return (
@@ -45,6 +46,11 @@ const Router = () => {
             <Route path='/formdata'>
                 <Navbar>
                     <FormData />
+                </Navbar>
+            </Route>
+            <Route path='/pembayaran'>
+                <Navbar>
+                    <Pembayaran />
                 </Navbar>
             </Route>
         </Switch>

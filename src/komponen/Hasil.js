@@ -1,24 +1,13 @@
-import axios from 'axios'
-import { Button, Modal } from 'react-bootstrap'
-import React, {useState} from 'react'
+import React from 'react'
 import { useHistory } from 'react-router'
 import { Commas } from '../utiliti/koma'
-import FormData from './FormData'
 import useFetch from './useFetch'
+import { Link } from 'react-router-dom';
 
 const Hasil = () => {
 
     const { items, loading, error } = useFetch('http://localhost:8000/keranjangs')
     const history = useHistory()
-
-    const [show, setShow] = useState(false);
-    const [nama, setNama] = useState('')
-    const [nohp, setNohp] = useState('')
-    const [alamat, setAlamat] = useState('')
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
 
     const totalBelanja = items.reduce(function (result, item){
         return result + item.total_harga;
@@ -28,25 +17,6 @@ const Hasil = () => {
     const shippingPrice = totalBelanja > 2000000 ? 0 : 100000;
     const total = totalBelanja + taxPrice + shippingPrice;
 
-   
-
-    const submitTotalBayar = (total) => {
-        const pesanan = {
-            total_bayar: total,
-            item: items
-        }
-        
-        fetch('http://localhost:8000/pesanans', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json"},
-            body: JSON.stringify(pesanan) 
-        }).then(() => {
-            console.log('Blog added')
-
-            history.push('/sukses')
-        })
-        
-    }
 
     return (
         <div className="home">
@@ -92,7 +62,7 @@ const Hasil = () => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <button className='btn btn-primary btn-block mt-3' onClick={() => submitTotalBayar(total)}>Bayar</button>
+                                    <button className='btn btn-primary btn-block mt-3' ><Link className='nav-link active text-white' to='/formdata'>Isi Data Diri</Link></button>
                                 </div>
                             </div>
                     </div>

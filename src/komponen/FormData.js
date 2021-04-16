@@ -10,9 +10,36 @@ const FormData = () => {
     const [nohp, setNohp] = useState('')
     const [alamat, setAlamat] = useState('')
 
+    const totalBelanja = items.reduce(function (result, item){
+        return result + item.total_harga;
+    }, 0)
+
+    const taxPrice = totalBelanja * 0.1;
+    const shippingPrice = totalBelanja > 2000000 ? 0 : 100000;
+    const total = totalBelanja + taxPrice + shippingPrice;
+
+    // TANPA FORM
+    // const submitTotalBayar = (total) => {
+    //     const pesanan = {
+    //         total_bayar: total,
+    //         item: items
+    //     }
+        
+    //     fetch('http://localhost:8000/pesanans', {
+    //         method: 'POST',
+    //         headers: { "Content-Type": "application/json"},
+    //         body: JSON.stringify(pesanan) 
+    //     }).then(() => {
+    //         console.log('Blog added')
+
+    //         history.push('/pembayaran')
+    //     })
+        
+    // }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const pesanans = {nama, nohp, alamat, }
+        const pesanans = {nama, nohp, alamat, totalBelanja, taxPrice, shippingPrice, total, items }
 
         fetch('http://localhost:8000/pesanans', {
             method: 'POST',
@@ -21,7 +48,7 @@ const FormData = () => {
         }).then(() => {
             console.log('Blog added')
 
-            history.push('/sukses')
+            history.push('/pembayaran')
         })
 
 
