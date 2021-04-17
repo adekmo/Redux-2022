@@ -1,0 +1,47 @@
+[33mcommit 96f02ed09e225e63e1ff8f9fe176aafe5783c614[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Sat Apr 17 13:53:19 2021 +0700
+
+    update file FormData.js dan index.css
+
+[33mcommit 51a07ff734fa05c5d82261d972b20d43c31dfa0d[m[33m ([m[1;31morigins/master[m[33m)[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Fri Apr 16 16:55:44 2021 +0700
+
+    menambahkan file Pembayaran.js
+
+[33mcommit 10ee554bab72a9cd9a39a7033a6152b07ecd4fa2[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Fri Apr 16 16:54:45 2021 +0700
+
+    update file FormData, Hasil, Home, Sukses, route/Index dan menambah file Pembayaran.js
+
+[33mcommit a3a60d9cf55a95c321cbb95ae5040c33e6dae76e[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Thu Apr 15 15:39:20 2021 +0700
+
+    update beberapa file dan menambah file FormData.js
+
+[33mcommit ac22f5869cda001319fdc385092b2b2b1cea57c0[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Tue Apr 13 16:01:14 2021 +0700
+
+    menambah homepage url di package.json
+
+[33mcommit dbd9254f581f7e6219b8799dce83ce8f6b036d4b[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Tue Apr 13 15:26:52 2021 +0700
+
+    commit awal
+
+[33mcommit 07d47bb9498d802ea0b1563a44adefd659f781c6[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Thu Feb 11 14:00:18 2021 +0700
+
+    commit app-kasir
+
+[33mcommit 52ef52797437525c287abd5ced112c3193d6aaa7[m
+Author: adekmo <monangbahana@gmail.com>
+Date:   Mon Feb 8 12:24:44 2021 +0700
+
+    Initialize project using Create React App
