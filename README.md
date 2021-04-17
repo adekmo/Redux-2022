@@ -1,3 +1,10 @@
+## Introduction
+ Create : Online Store
+ Language : React JS
+ Data : Fake API JSON Placeholder
+ Stage : Develop
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
