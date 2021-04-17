@@ -1,7 +1,10 @@
 ## Introduction
  Create : Online Store
+ 
  Language : React JS
+ 
  Data : Fake API JSON Placeholder
+ 
  Stage : Develop
 
 
