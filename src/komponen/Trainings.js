@@ -9,7 +9,7 @@ const Trainings = () => {
     return (
         <div className="home">
             { error && <div>{error}</div>}
-            {loading && <div>Loading ...</div>}
+            {loading && <div className='loading'><div></div><div></div><div></div></div>}
             {items && <TrainingList itemss={items}/>}
         </div>
     )

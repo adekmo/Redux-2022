@@ -33,8 +33,11 @@ const Navbar = ({children}) => {
                         </li>
                     </ul>
                     <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                        <NavLink className='nav-link' to='/pembayaran'>Pesanan Saya</NavLink>
+                        </li>
                         <li className="nav-item">
-                        <NavLink className='nav-link active' to='/hasil'>Cart { ' '}
+                        <NavLink className='nav-link active' to='/hasil'>Keranjang { ' '}
                     {countCart ? (
                         <button className='badge'>{countCart}</button>
                     ) : ('')

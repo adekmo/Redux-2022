@@ -29,9 +29,9 @@ const Sukses = () => {
         <div>
                 {
                     // penulisan if-else loading, jika true jalankan div, jika false jalankan table
-                    loading ? <div>Loading . . .</div> : <div className="mt-4 text-center">
+                    loading ? <div className='loading'><div></div><div></div><div></div></div> : <div className="mt-4 text-center">
                     <img src="assets/images/sukses.png" width="500" />
-                    <h2>Sukses</h2>
+                    <h1>Konfirmasi</h1>
                     <p>Terima Kasih Telah Berbelanja</p>
                     <p>Tekan tombol konfirmasi untuk mengakhiri transaksi.</p>
                     <button className="btn btn-primary" onClick={handleClick}>Konfirmasi</button>

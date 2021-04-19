@@ -1,10 +1,8 @@
 import React from 'react'
 import { Commas } from '../utiliti/koma'
-import useFetch from './useFetch'
 
 const ItemsList = ({itemss, keranjang}) => {
 
-    const {loading} = useFetch('http://localhost:8000/products')
 
     return (
         <div className="container">

@@ -9,7 +9,7 @@ const Retros = () => {
     return (
         <div className="home">
             { error && <div>{error}</div>}
-            {loading && <div>Loading ...</div>}
+            {loading && <div className='loading'><div></div><div></div><div></div></div>}
             {items && <RetroList itemss={items}/>}
         </div>
     )

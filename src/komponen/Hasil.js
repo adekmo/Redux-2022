@@ -19,9 +19,10 @@ const Hasil = () => {
 
 
     return (
-        <div className="home">
+        <div className="container">
             <div>
-                { items.length === 0 && <div>Cart Is Empty</div> }
+                {loading && <div className='loading'>Loading ...</div>} 
+                { items.length === 0 && <div>Keranjang Kosong</div> }
             </div>
             {
                 items.map((h, index) => {

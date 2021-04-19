@@ -10,9 +10,11 @@ const Pembayaran = () => {
             <div className="container">
             <div className="row justify-content-center">
                     <div className="col-md">
+                            
+
                         {
                             // penulisan if-else loading, jika true jalankan div, jika false jalankan table
-                            loading ? <div>Loading . . .</div> : <table className="table align-middle">
+                            loading ? <div className='loading'><div></div><div></div><div></div></div> : <table className="table align-middle">
                             <thead className="text-center table-secondary">
                                 <tr>
                                     <th>No</th>
@@ -26,7 +28,8 @@ const Pembayaran = () => {
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            { items.length === 0 && <div>Pesanan Kosong</div> }
+                            <tbody className="text-center">
                                     {
                                         items.map((item, index) => {
                                             return (
@@ -66,9 +69,15 @@ const Pembayaran = () => {
                                     }
                                 
                             </tbody>
+                            <div className="row">
+                                <div className="col-md-4 span-3 offset-9 fixed-bottom my-5">
+                                <button className='btn btn-primary'><Link className='nav-link active text-white' to='/sukses'>Lanjutkan Pemabayaran</Link></button>
+                                </div>
+                            </div>
                         </table>
                         }
                     </div>
+                    
                 </div>
         </div>
     </div>
