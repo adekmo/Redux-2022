@@ -6,48 +6,72 @@ const Pembayaran = () => {
     const { items, loading, error } = useFetch('http://localhost:8000/pesanans')
 
     return (
-        <div className="container">
-            {
-            items.map((item, index) => {
-                return (
-                    <div className="col-md-4 mb-4 d-inline-flex" key={index}>
-                        <div>
-                            <h3>Nama : {item.nama}</h3>
-                            <h3>No Handphone : {item.nohp}</h3>
-                            <h3>Alamat : {item.alamat}</h3>
-                            {
-                                item.items.map((it, i) => {
-                                    return (
-                                        <div key={i}>
-                                            <img src={"assets/images/"+
-                                            it.product.category.nama.toLowerCase()+
-                                            "/"+
-                                            it.product.gambar} className="card-img-top" alt="jersey" />
-                                            <h3>Jumlah : {it.jumlah}</h3>
-                                            <h3>Jumlah : {it.total_harga}</h3>
-                                        </div>
-                                    )
-                                })
-                            }
-                            <h3>Total Belanja : {item.totalBelanja}</h3>
-                            <h3>Pajak : {item.taxPrice}</h3>
-                            <h3>Shipping Price : {item.shippingPrice}</h3>
-                            <h3>Total Bayar : {item.total}</h3>
-                            
-                            {/* <h5 className="card-title">{item.nama}</h5>
-                            <p>Rp. {Commas(item.harga)}</p>
-                                <div className='d-flex justify-content-end'>
-                                    
-                                <button className="btn btn-primary mt-2" onClick={(e) => keranjang(item)}>Add to Cart</button> 
+        <div className="py-5">
+            <div className="container">
+            <div className="row justify-content-center">
+                    <div className="col-md">
+                        {
+                            // penulisan if-else loading, jika true jalankan div, jika false jalankan table
+                            loading ? <div>Loading . . .</div> : <table className="table align-middle">
+                            <thead className="text-center table-secondary">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>No HP</th>
+                                    <th>Alamat</th>
+                                    <th>Items</th>
+                                    <th>Total Harga</th>
+                                    <th>Pajak</th>
+                                    <th>Shipping</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    {
+                                        items.map((item, index) => {
+                                            return (
+                                                <tr key={index}>
+                                                    <td>{index+1}</td>
+                                                    <td>{item.nama}</td>
+                                                    <td>{item.nohp}</td>
+                                                    <td>{item.alamat}</td>
+                                                    <td className="text-center">
+                                                        <tr>
+                                                            <th>Gambar</th>
+                                                            <th>Jumlah Item</th>
+                                                            <th>Total</th>
+                                                        </tr>
+                                                        {
+                                                        item.items.map((it, i) => {
+                                                            return (
+                                                                <tr key={i}>
+                                                                    <td className="itemgambar"><img src={"assets/images/"+
+                                                                    it.product.category.nama.toLowerCase()+
+                                                                    "/"+
+                                                                    it.product.gambar} className="card-img-top" alt="jersey" /></td>
+                                                                    <td>{it.jumlah}</td>
+                                                                    <td>{it.total_harga}</td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                    }
+                                                    </td>
+                                                    <td>{item.totalBelanja}</td>
+                                                    <td>{item.taxPrice}</td>
+                                                    <td>{item.shippingPrice}</td>
+                                                    <td>{item.total}</td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
                                 
-                                </div>   */}
-                                <button className='btn btn-primary'><Link className='nav-link active text-white' to='/sukses'>Lanjutkan Pemabayaran</Link></button>
-                        </div>
+                            </tbody>
+                        </table>
+                        }
                     </div>
-                )
-            })
-        }
+                </div>
         </div>
+    </div>
     )
 }
 

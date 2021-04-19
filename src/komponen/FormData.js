@@ -46,7 +46,7 @@ const FormData = () => {
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(pesanans) 
         }).then(() => {
-            console.log('Blog added')
+            console.log('Item added')
 
             history.push('/pembayaran')
         })
