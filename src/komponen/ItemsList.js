@@ -10,7 +10,7 @@ const ItemsList = ({itemss, keranjang}) => {
             itemss.map((item, index) => {
                 return (
                     <div className="col-md-4 mb-4 d-inline-flex" key={index}>
-                        <div>
+                        <div> 
                             <img src={"assets/images/"+
                                     item.category.nama.toLowerCase()+
                                     "/"+
@@ -21,7 +21,6 @@ const ItemsList = ({itemss, keranjang}) => {
                                 <div className='d-flex justify-content-end'>
                                     
                                 <button className="btn btn-primary mt-2" onClick={(e) => keranjang(item)}>Add to Cart</button> 
-                                
                                 </div>  
                         </div>
                     </div>

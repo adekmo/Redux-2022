@@ -20,11 +20,9 @@ const Hasil = () => {
 
     return (
         <div className="container">
-            <div>
-                {loading && <div className='loading'>Loading ...</div>} 
-                { items.length === 0 && <div>Keranjang Kosong</div> }
-            </div>
             {
+                loading ? <div className='loading'><div></div><div></div><div></div></div> : items.length === 0 && <div>Keranjang Kosong</div> }
+                {
                 items.map((h, index) => {
                     return(
                     <div className="row" key={index}>

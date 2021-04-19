@@ -8,8 +8,8 @@ const RetroList = ({itemss}) => {
             {
                 itemss.map((r, index) => {
                     return(
-                        <div className="col-md-4 mb-4 d-inline-flex">
-                            <div className="card shadow " key={index}>
+                        <div className="col-md-4 mb-4 d-inline-flex" key={index}>
+                            <div className="card shadow " >
                                 <img src={"assets/images/"+
                         r.category.nama.toLowerCase()+
                         "/"+

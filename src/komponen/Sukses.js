@@ -33,7 +33,8 @@ const Sukses = () => {
                     <img src="assets/images/sukses.png" width="500" />
                     <h1>Konfirmasi</h1>
                     <p>Terima Kasih Telah Berbelanja</p>
-                    <p>Tekan tombol konfirmasi untuk mengakhiri transaksi.</p>
+                    <p>Silahkan lakukan pembayaran ke Rek berikut XXXXXXX</p>
+                    <p>Tekan tombol konfirmasi Jika telah melakukan pembayaran.</p>
                     <button className="btn btn-primary" onClick={handleClick}>Konfirmasi</button>
                     </div>
                 }
