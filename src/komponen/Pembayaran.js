@@ -1,6 +1,7 @@
 import React from 'react'
 import useFetch from './useFetch'
 import { Link } from 'react-router-dom';
+import { Commas } from '../utiliti/koma'
 
 const Pembayaran = () => {
     const { items, loading, error } = useFetch('http://localhost:8000/pesanans')
@@ -52,17 +53,17 @@ const Pembayaran = () => {
                                                                     it.product.category.nama.toLowerCase()+
                                                                     "/"+
                                                                     it.product.gambar} className="card-img-top" alt="jersey" /></td>
-                                                                    <td>{it.jumlah}</td>
-                                                                    <td>{it.total_harga}</td>
+                                                                    <td>Rp. {Commas(it.jumlah)}</td>
+                                                                    <td>Rp. {Commas(it.total_harga)}</td>
                                                                 </tr>
                                                             )
                                                         })
                                                     }
                                                     </td>
-                                                    <td>{item.totalBelanja}</td>
-                                                    <td>{item.taxPrice}</td>
-                                                    <td>{item.shippingPrice}</td>
-                                                    <td>{item.total}</td>
+                                                    <td>Rp. {Commas(item.totalBelanja)}</td>
+                                                    <td>Rp. {Commas(item.taxPrice)}</td>
+                                                    <td>Rp. {Commas(item.shippingPrice)}</td>
+                                                    <td>Rp. {Commas(item.total)}</td>
                                                 </tr>
                                             )
                                         })
