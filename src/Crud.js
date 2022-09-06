@@ -1,14 +1,12 @@
 import React from 'react'
 import Router from './route'
 
-
-const Kasir = () => {
-
+const Crud = () => {
     return (
-        <div className='container'>
+        <div>
             <Router />
         </div>
     )
 }
 
-export default Kasir
+export default Crud
