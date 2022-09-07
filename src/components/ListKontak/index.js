@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getListKontak } from '../../actions/kontakAction';
+import { deleteKontak, getListKontak, detailKontak } from '../../actions/kontakAction';
 
 const ListKontak = () => {
 
-    const {getListKontakResult, getListKontakLoading, getListKontakError} = useSelector((state) => state.KontakReducer);
+    const {getListKontakResult, getListKontakLoading, getListKontakError, deleteKontakResult} = useSelector((state) => state.KontakReducer);
 
 
     const dispatch = useDispatch();
@@ -13,7 +13,16 @@ const ListKontak = () => {
         //get list kontak, panggil action getListKontak
         console.log('1. useEffect dlu');
         dispatch(getListKontak());
-    }, [dispatch])
+        if(deleteKontakResult){
+            dispatch(getListKontak());
+        }
+    }, [dispatch, deleteKontakResult])
+
+    // useEffect(() => {
+    //     if(deleteKontakResult){
+    //         dispatch(getListKontak());
+    //     }
+    // }, [deleteKontakResult, dispatch])
 
     return (
         <div>
@@ -27,6 +36,10 @@ const ListKontak = () => {
                             </div>
                             <div>
                                 <h6>No Handphone : {kontak.handphone}</h6>
+                            </div>
+                            <div>
+                                <button onClick={() => dispatch(deleteKontak(kontak.id))}>remove</button>
+                                <button style={{marginLeft: '10px'}} onClick={() => dispatch(detailKontak(kontak)) }>Edit</button>
                             </div>
                         </div>
                     )

@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { addKontak, getListKontak } from '../../actions/kontakAction';
+import { addKontak, getListKontak, updateKontak } from '../../actions/kontakAction';
 
 const AddKontak = () => {
 
     const [kontak, setKontak] = useState({
         nama : "",
-        handphone : ""
+        handphone : "",
+        id : ""
     });
 
-    const {addKontakResult} = useSelector((state) => state.KontakReducer);
+    const {addKontakResult, detailKontakResult,  updateKontakResult} = useSelector((state) => state.KontakReducer);
 
     const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        dispatch(addKontak({nama : kontak.nama, handphone : kontak.handphone}))
+        if(kontak.id){
+            //update kontak
+            dispatch(updateKontak({id: kontak.id, nama : kontak.nama, handphone : kontak.handphone}))
+        }else{
+            //add kontak
+            dispatch(addKontak({nama : kontak.nama, handphone : kontak.handphone}))
+        }
     }
 
     useEffect(() => {
@@ -26,9 +32,22 @@ const AddKontak = () => {
         setKontak({nama: '', handphone: ''});
     }, [addKontakResult, dispatch])
 
+    useEffect(() => {
+        if(detailKontakResult){
+            setKontak({nama : detailKontakResult.nama, handphone: detailKontakResult.handphone, id: detailKontakResult.id})
+        }
+    }, [detailKontakResult, dispatch])
+
+    useEffect(() => {
+        if(updateKontakResult){
+            dispatch(getListKontak());
+        }
+        setKontak({nama: '', handphone: ''});
+    }, [updateKontakResult, dispatch])
+
     return (
         <div>
-            <h4>Add Kontak +</h4>
+            <h4>{kontak.id ? "Edit Kontak" : "Add Kontak"}</h4>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <input type="text" name="nama" placeholder="Nama" value={kontak.nama} onChange={(e) => setKontak({...kontak, nama : e.target.value})}></input>
                 <input type="text" name="handphone" placeholder="No Handphone" value={kontak.handphone} onChange={(e) => setKontak({...kontak, handphone : e.target.value})}></input>

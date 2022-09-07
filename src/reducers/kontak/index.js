@@ -1,4 +1,4 @@
-import {GET_LIST_KONTAK, ADD_KONTAK} from '../../actions/kontakAction'
+import {GET_LIST_KONTAK, ADD_KONTAK, DELETE_KONTAK, DETAIL_KONTAK, UPDATE_KONTAK} from '../../actions/kontakAction'
 
 const initialState = {
     // yg ada di payload kontakAction (loading, data, error)
@@ -9,8 +9,22 @@ const initialState = {
 
     //Add kontak
     addKontakResult: false,
-    addtKontakLoading: false,
+    addKontakLoading: false,
     addKontakError: false,
+
+    //delete kontak
+    deleteKontakResult: false,
+    deleteKontakLoading: false,
+    deleteKontakError: false,
+
+    //detail kontak
+    detailKontakResult: false,
+
+    //update kontak
+    updateKontakResult: false,
+    updateKontakLoading: false,
+    updateKontakError: false,
+
 }
 
 const kontak = (state = initialState, action) => {
@@ -29,6 +43,25 @@ const kontak = (state = initialState, action) => {
                 addKontakResult: action.payload.data,
                 addKontakLoading: action.payload.loading,
                 addKontakError : action.payload.errorMessage
+            }
+        case DELETE_KONTAK:
+            return {
+                ...state,
+                deleteKontakResult: action.payload.data,
+                deleteKontakLoading: action.payload.loading,
+                deleteKontakError : action.payload.errorMessage
+            }
+        case DETAIL_KONTAK:
+            return {
+                ...state,
+                detailKontakResult: action.payload.data,
+            }
+        case UPDATE_KONTAK:
+            return {
+                ...state,
+                updateKontakResult: action.payload.data,
+                updateKontakLoading: action.payload.loading,
+                updateKontakError : action.payload.errorMessage
             }
         default:
             return state;
