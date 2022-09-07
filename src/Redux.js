@@ -1,5 +1,5 @@
 import React from 'react'
-import { ListKontak } from './components'
+import { ListKontak, AddKontak } from './components'
 
 const Redux = () => {
     return (
@@ -7,6 +7,8 @@ const Redux = () => {
             <h2>Reduxx</h2>
             <hr></hr>
             <h2>Kontak App</h2>
+            <AddKontak />
+            <hr></hr>
             <ListKontak />
         </div>
     )
